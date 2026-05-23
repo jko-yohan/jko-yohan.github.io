@@ -2,45 +2,280 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4754582635962628"
-         crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jko-yohan - Developer Tools & Projects</title>
-    <meta name="description" content="Free developer tools and projects by jko-yohan.">
+    <title>jko-yohan - Free Developer Tools & Utilities</title>
+    <meta name="description" content="Free online developer tools: JSON Formatter, Diff Checker, Word Counter, QR Code Generator, CSS Gradient, and more. No signup required, all tools run in your browser.">
+    <meta name="keywords" content="free developer tools, online utilities, JSON formatter, diff checker, word counter, QR code generator, CSS gradient, regex tester">
+    <link rel="canonical" href="https://jko-yohan.github.io/">
+    <meta property="og:title" content="jko-yohan - Free Developer Tools & Utilities">
+    <meta property="og:description" content="15+ free browser-based developer tools. No signup, no data collection.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jko-yohan.github.io/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: #0f1117;
             color: #e4e7ef;
+            line-height: 1.7;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .hero h1 span { color: #6c63ff; }
+        .hero p {
+            color: #8b92a8;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 12px;
+        }
+        .hero .stats {
             display: flex;
-            align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            gap: 32px;
+            margin-top: 24px;
+            color: #8b92a8;
+            font-size: 0.9rem;
+        }
+        .hero .stats strong {
+            display: block;
+            font-size: 1.5rem;
+            color: #6c63ff;
+            font-weight: 700;
+        }
+
+        /* Section */
+        section { padding: 40px 0; }
+        section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
             text-align: center;
         }
-        .container { max-width: 600px; padding: 40px 20px; }
-        h1 { font-size: 2rem; margin-bottom: 12px; }
-        h1 span { color: #6c63ff; }
-        p { color: #8b92a8; margin-bottom: 24px; }
-        a {
-            display: inline-block;
-            background: #6c63ff;
-            color: white;
-            text-decoration: none;
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background 0.2s;
+        section .section-desc {
+            text-align: center;
+            color: #8b92a8;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        a:hover { background: #5a52d5; }
+
+        /* Tool Grid */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .tool-card {
+            background: #1a1d27;
+            border: 1px solid #2a2d3a;
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .tool-card:hover {
+            border-color: #6c63ff;
+            transform: translateY(-2px);
+        }
+        .tool-card .icon {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+        .tool-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .tool-card p {
+            color: #8b92a8;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+        .tool-card .tag {
+            display: inline-block;
+            background: #6c63ff22;
+            color: #9d97ff;
+            font-size: 0.72rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* About */
+        .about {
+            background: #1a1d27;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        .about h2 { text-align: left; margin-bottom: 16px; }
+        .about p { color: #8b92a8; margin-bottom: 12px; }
+        .about ul {
+            color: #8b92a8;
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        .about ul li { margin-bottom: 6px; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #555;
+            font-size: 0.85rem;
+            border-top: 1px solid #1e2130;
+        }
+        footer a { color: #6c63ff; text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero .stats { gap: 20px; }
+            .tool-grid { grid-template-columns: 1fr; }
+            .about { padding: 24px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Dev<span>Tools</span> Online</h1>
-        <p>Free developer utilities - JSON Formatter, Text Counter, Color Palette, Base64, URL Encoder, Hash Generator</p>
-        <a href="/devtools-online/">Open DevTools</a>
+        <header class="hero">
+            <h1>Free Dev<span>Tools</span> Online</h1>
+            <p>A collection of free, browser-based developer utilities. No signup required, no data sent to servers — everything runs locally in your browser.</p>
+            <div class="stats">
+                <div><strong>15+</strong>Tools</div>
+                <div><strong>100%</strong>Free</div>
+                <div><strong>0</strong>Data Collected</div>
+            </div>
+        </header>
+
+        <section>
+            <h2>Developer Utilities</h2>
+            <p class="section-desc">Essential tools for everyday development tasks — format, encode, generate, and compare.</p>
+            <div class="tool-grid">
+                <a href="/devtools-online/" class="tool-card">
+                    <div class="icon">&#128295;</div>
+                    <h3>DevTools Online</h3>
+                    <p>All-in-one developer toolkit with JSON Formatter, Text Counter, Color Palette, Base64 Encoder, URL Encoder, and Hash Generator in a single page.</p>
+                    <span class="tag">6 tools in 1</span>
+                </a>
+                <a href="/json-formatter/" class="tool-card">
+                    <div class="icon">&#123;&#125;</div>
+                    <h3>JSON Formatter & Validator</h3>
+                    <p>Paste raw JSON to format, validate, and beautify it instantly. Supports minification, tree view, and syntax error detection.</p>
+                    <span class="tag">Format & Validate</span>
+                </a>
+                <a href="/diff-checker/" class="tool-card">
+                    <div class="icon">&#128203;</div>
+                    <h3>Diff Checker</h3>
+                    <p>Compare two blocks of text side by side. Highlights additions, deletions, and modifications line by line with color coding.</p>
+                    <span class="tag">Text Comparison</span>
+                </a>
+                <a href="/word-counter/" class="tool-card">
+                    <div class="icon">&#128221;</div>
+                    <h3>Word & Character Counter</h3>
+                    <p>Count words, characters, sentences, and paragraphs in real time. Estimates reading and speaking time for your content.</p>
+                    <span class="tag">Content Analysis</span>
+                </a>
+                <a href="/regex-tester/" class="tool-card">
+                    <div class="icon">&#47;.*&#47;</div>
+                    <h3>Regex Tester</h3>
+                    <p>Test regular expressions against sample text with real-time match highlighting. Supports flags and capture group display.</p>
+                    <span class="tag">Pattern Matching</span>
+                </a>
+                <a href="/uuid-generator/" class="tool-card">
+                    <div class="icon">&#128273;</div>
+                    <h3>UUID Generator</h3>
+                    <p>Generate random UUID v4 identifiers with one click. Bulk generate multiple UUIDs and copy them instantly.</p>
+                    <span class="tag">Unique IDs</span>
+                </a>
+                <a href="/timestamp-converter/" class="tool-card">
+                    <div class="icon">&#9201;</div>
+                    <h3>Unix Timestamp Converter</h3>
+                    <p>Convert between Unix timestamps and human-readable dates. Supports seconds and milliseconds with timezone awareness.</p>
+                    <span class="tag">Date & Time</span>
+                </a>
+                <a href="/lorem-ipsum/" class="tool-card">
+                    <div class="icon">&#128196;</div>
+                    <h3>Lorem Ipsum Generator</h3>
+                    <p>Generate placeholder text in paragraphs, sentences, or words. Customize the amount of dummy text for your designs and layouts.</p>
+                    <span class="tag">Placeholder Text</span>
+                </a>
+                <a href="/qr-code-generator/" class="tool-card">
+                    <div class="icon">&#9638;</div>
+                    <h3>QR Code Generator</h3>
+                    <p>Create QR codes from any URL or text. Download as PNG image for use in print materials, presentations, or websites.</p>
+                    <span class="tag">Generate & Download</span>
+                </a>
+                <a href="/css-gradient/" class="tool-card">
+                    <div class="icon">&#127912;</div>
+                    <h3>CSS Gradient Generator</h3>
+                    <p>Design linear and radial CSS gradients visually. Adjust colors, direction, and stops, then copy the CSS code directly.</p>
+                    <span class="tag">Visual Design</span>
+                </a>
+                <a href="/markdown-preview/" class="tool-card">
+                    <div class="icon">&#9997;</div>
+                    <h3>Markdown Preview</h3>
+                    <p>Write Markdown and see a live HTML preview side by side. Supports GitHub-flavored Markdown syntax and export to HTML.</p>
+                    <span class="tag">Live Preview</span>
+                </a>
+            </div>
+        </section>
+
+        <section>
+            <h2>References & Resources</h2>
+            <p class="section-desc">Quick-reference cheatsheets and free assets for developers and designers.</p>
+            <div class="tool-grid">
+                <a href="/dev-cheatsheets/" class="tool-card">
+                    <div class="icon">&#128218;</div>
+                    <h3>Dev Cheatsheets</h3>
+                    <p>15 quick-reference cheatsheets covering Git, JavaScript, Python, Docker, SQL, Regex, CSS Flexbox/Grid, Bash, Vim, VS Code, and more.</p>
+                    <span class="tag">15 Cheatsheets</span>
+                </a>
+                <a href="/svg-icons-free/" class="tool-card">
+                    <div class="icon">&#11088;</div>
+                    <h3>SVG Icons Free</h3>
+                    <p>210+ free open-source SVG icons across 10 categories. Copy SVG code or download icons for your projects. MIT licensed.</p>
+                    <span class="tag">210+ Icons</span>
+                </a>
+                <a href="/link-in-bio/" class="tool-card">
+                    <div class="icon">&#128279;</div>
+                    <h3>Link-in-Bio Generator</h3>
+                    <p>Create a simple link-in-bio page with multiple themes. Export as a standalone HTML file — no hosting account needed.</p>
+                    <span class="tag">5 Themes</span>
+                </a>
+            </div>
+        </section>
+
+        <div class="about">
+            <h2>About This Project</h2>
+            <p>This is a collection of free, open-source developer tools built and maintained by <strong>jko-yohan</strong>. Every tool is designed with a simple philosophy:</p>
+            <ul>
+                <li><strong>Privacy first</strong> — All processing happens in your browser. No data is ever sent to external servers.</li>
+                <li><strong>No signup</strong> — Use any tool instantly without creating an account or providing an email.</li>
+                <li><strong>Fast and lightweight</strong> — Pure HTML, CSS, and JavaScript with no heavy frameworks. Pages load in under a second.</li>
+                <li><strong>Open source</strong> — All source code is available on GitHub under permissive licenses.</li>
+            </ul>
+            <p>Whether you are a frontend developer, backend engineer, technical writer, or student, these tools are built to save you time on repetitive tasks. Bookmark this page and come back whenever you need a quick utility.</p>
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2026 jko-yohan. All tools are free and open source. <a href="https://github.com/jko-yohan">GitHub</a></p>
+    </footer>
 </body>
 </html>
